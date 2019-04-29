@@ -1,0 +1,7 @@
+ACCEPT_EULA=accept
+CONTINUE_WITH_OPTIONAL_ERROR=yes
+PSET_INSTALL_DIR=/opt/intel
+CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
+PSET_MODE=install
+INTEL_SW_IMPROVEMENT_PROGRAM_CONSENT=no
+COMPONENTS=;intel-ism__noarch;intel-cv-sdk-base-shared__noarch;intel-cv-sdk-base-l-setupvars__noarch;intel-cv-sdk-base-documentation__noarch;intel-cv-sdk-base-l-documentation__noarch;intel-cv-sdk-base-l-model-optimizer__noarch;intel-cv-sdk-base-l-inference-engine__noarch;intel-cv-sdk-base-gfx-install__noarch;intel-cv-sdk-base-l-ocv-ubuntu__noarch;intel-cv-sdk-base-l-ovx-rt-ubuntu__noarch;intel-cv-sdk-base-l-models__noarch;intel-cv-sdk-base-l-algorithms-ubuntu__noarch;intel-cv-sdk-base-l-media-stack__noarch;intel-cv-sdk-base-shared-pset
