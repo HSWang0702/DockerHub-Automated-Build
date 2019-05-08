@@ -13,7 +13,7 @@ RUN cd /opt/intel/computer_vision_sdk/install_dependencies/ && sed -i 's/sudo -E
 chmod +x install_cv_sdk_dependencies.sh && ./install_cv_sdk_dependencies.sh
 
 RUN cd /opt/intel/computer_vision_sdk/deployment_tools/model_optimizer/install_prerequisites && \
-sed -i 's/sudo -E//g' install_prerequisites.sh && ./install_prerequisites_caffe.sh
+sed -i 's/sudo -E//g' install_prerequisites.sh && sed -i 's/python_binary=python3$/python_binary=python3.6/g' install_prerequisites.sh  && ./install_prerequisites_caffe.sh
 
 RUN python3.6 /opt/intel/computer_vision_sdk/deployment_tools/model_optimizer/mo/front/caffe/proto/generate_caffe_pb2.py --input_proto /opt/caffe/src/caffe/proto/caffe.proto
 

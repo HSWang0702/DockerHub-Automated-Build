@@ -1,7 +1,11 @@
-FROM hswang0702/caffe-ssd-modify:cuda9.0-cudnn7-devel-ubuntu16.04
+FROM ubuntu:16.04
 MAINTAINER hswang0702 <hswang0702@gmail.com>
 
-RUN apt-get install cpio pciutils -y
+RUN apt-get update && apt-get install cpio pciutils vim git python-software-properties software-properties-common tar wget curl zip -y
+
+RUN add-apt-repository ppa:jonathonf/python-3.6 -y && apt-get update && apt-get install python3.6 python3-pip python3.6-dev -y
+
+RUN python3.6 -m pip install opencv-python matplotlib scikit-image futures pandas h5py scipy Pillow
 
 COPY l_openvino_toolkit_p_2019.1.094.tgz /opt/l_openvino_toolkit_p_2019.1.094.tgz
 COPY openvino_configure.txt /opt/l_openvino_toolkit_p_2019.1.094/openvino_configure.txt
@@ -14,8 +18,6 @@ chmod +x install_openvino_dependencies.sh && ./install_openvino_dependencies.sh
 
 RUN cd /opt/intel/openvino/deployment_tools/model_optimizer/install_prerequisites && \
 sed -i 's/sudo -E//g' install_prerequisites.sh && sed -i 's/python_binary=python3$/python_binary=python3.6/g' install_prerequisites.sh  && ./install_prerequisites_caffe.sh
-
-RUN python3.6 /opt/intel/openvino_2019.1.094/deployment_tools/model_optimizer/mo/front/caffe/proto/generate_caffe_pb2.py --input_proto /opt/caffe/src/caffe/proto/caffe.proto
 
 RUN sed -i 's/.prior_box_param/.prior_box_clustered_param/g' /opt/intel/openvino_2019.1.094/deployment_tools/model_optimizer/extensions/front/caffe/priorbox_clustered_ext.py && \
 sed -i "s/'flip':/# 'flip':/g" /opt/intel/openvino_2019.1.094/deployment_tools/model_optimizer/extensions/front/caffe/priorbox_clustered_ext.py && \

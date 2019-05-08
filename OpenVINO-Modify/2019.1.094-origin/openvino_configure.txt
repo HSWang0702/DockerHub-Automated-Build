@@ -1,0 +1,7 @@
+ACCEPT_EULA=accept
+CONTINUE_WITH_OPTIONAL_ERROR=yes
+PSET_INSTALL_DIR=/opt/intel
+CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
+PSET_MODE=install
+INTEL_SW_IMPROVEMENT_PROGRAM_CONSENT=no
+COMPONENTS=;intel-openvino-base__noarch;intel-openvino-dldt-base__noarch;intel-openvino-setupvars__x86_64;intel-openvino-ie-sdk-ubuntu-xenial__x86_64;intel-openvino-ie-samples__x86_64;intel-openvino-ie-rt__x86_64;intel-openvino-ie-rt-core-ubuntu-xenial__x86_64;intel-openvino-ie-rt-cpu-ubuntu-xenial__x86_64;intel-openvino-ie-rt-gpu-ubuntu-xenial__x86_64;intel-openvino-ie-rt-vpu-ubuntu-xenial__x86_64;intel-openvino-ie-rt-gna-ubuntu-xenial__x86_64;intel-openvino-ie-rt-hddl-ubuntu-xenial__x86_64;intel-openvino-model-optimizer__x86_64;intel-openvino-opencv-generic__x86_64;intel-openvino-opencv-lib-ubuntu-xenial__x86_64;intel-openvino-openvx-ubuntu__x86_64;intel-openvino-models__x86_64;intel-openvino-mediasdk__x86_64;intel-openvino-docs__x86_64;intel-openvino-gfx-driver__x86_64;intel-openvino-base-pset
